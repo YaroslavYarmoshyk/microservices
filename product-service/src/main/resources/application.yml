@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: product-service
+
+logging:
+  level:
+    root: INFO
+    com.microservices: DEBUG
+
+server:
+  port: 7001
