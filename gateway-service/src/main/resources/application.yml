@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: gateway
+  cloud:
+    gateway:
+      routes:
+        - id: product
+          uri: ${system-configuration.endpoints.product-service}
+          predicates:
+            - Path=/api/products/**
+        - id: recommendation
+          uri: ${system-configuration.endpoints.recommendation-service}
+          predicates:
+            - Path=/api/recommendations/**
+        - id: review
+          uri: ${system-configuration.endpoints.review-service}
+          predicates:
+            - Path=/api/reviews/**

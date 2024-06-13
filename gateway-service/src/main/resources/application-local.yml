@@ -1,0 +1,8 @@
+server:
+  port: 8080
+
+system-configuration:
+  endpoints:
+    product-service: http://localhost:7001
+    recommendation-service: http://localhost:7002
+    review-service: http://localhost:7003

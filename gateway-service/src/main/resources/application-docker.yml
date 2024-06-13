@@ -1,0 +1,5 @@
+system-configuration:
+  endpoints:
+    product-service: http://product:8080
+    recommendation-service: http://recommendation:8080
+    review-service: http://review:8080
