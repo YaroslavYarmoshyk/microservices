@@ -6,3 +6,44 @@ logging:
   level:
     root: INFO
     com.microservices: DEBUG
+
+api:
+  common:
+    version: 1.0.0
+    title: Sample API
+    description: Description of the API...
+    termsOfService: MY TERMS OF SERVICE
+    license: MY LICENSE
+    licenseUrl: MY LICENSE URL
+    externalDocDesc: MY WIKI PAGE
+    externalDocUrl: MY WIKI URL
+    contact:
+      name: NAME OF CONTACT
+      url: URL TO CONTACT
+      email: contact@mail.com
+  response-codes:
+    ok:
+      description: OK
+    bad-request:
+      description: Bad request, invalid format of the request. See response message for more information
+    not-found:
+      description: Not found, specified resource does not exist
+    server-error:
+      description: Something went wrong
+  get-product-by-id:
+    summary: Returns a composite view of the specified product id
+    description: |
+      If the requested product id is found the method will return information regarding:
+              1. Base product information
+              1. Reviews
+              1. Recommendations
+
+system-configuration:
+  cors:
+    allowed-methods:
+      - GET
+      - POST
+      - PUT
+      - DELETE
+      - HEAD
+      - OPTIONS

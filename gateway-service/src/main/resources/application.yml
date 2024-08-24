@@ -1,3 +1,6 @@
+server:
+  forward-headers-strategy: framework
+
 spring:
   application:
     name: gateway
@@ -8,11 +11,30 @@ spring:
           uri: ${system-configuration.endpoints.product-service}
           predicates:
             - Path=/api/products/**
+          filters:
+            - RewritePath=/api/products/v3/api-docs, /v3/api-docs
         - id: recommendation
           uri: ${system-configuration.endpoints.recommendation-service}
           predicates:
             - Path=/api/recommendations/**
+          filters:
+            - RewritePath=/api/recommendations/v3/api-docs, /v3/api-docs
         - id: review
           uri: ${system-configuration.endpoints.review-service}
           predicates:
             - Path=/api/reviews/**
+          filters:
+            - RewritePath=/api/reviews/v3/api-docs, /v3/api-docs
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    urls:
+      - name: product-service
+        url: /api/products/v3/api-docs
+      - name: recommendation-service
+        url: /api/recommendations/v3/api-docs
+      - name: review-service
+        url: /api/reviews/v3/api-docs

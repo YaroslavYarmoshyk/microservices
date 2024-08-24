@@ -1,2 +1,7 @@
 server:
   port: 7001
+
+system-configuration:
+  cors:
+    allowed-origins:
+      - http://localhost:8080
